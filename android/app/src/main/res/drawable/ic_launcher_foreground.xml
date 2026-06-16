@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Green gradient background circle -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M54,0C83.82,0 108,24.18 108,54C108,83.82 83.82,108 54,108C24.18,108 0,83.82 0,54C0,24.18 24.18,0 54,0Z" />
+    <!-- Inner accent ring -->
+    <path
+        android:fillColor="#16A34A"
+        android:pathData="M54,12C77.2,12 96,30.8 96,54C96,77.2 77.2,96 54,96C30.8,96 12,77.2 12,54C12,30.8 30.8,12 54,12ZM54,18C34.1,18 18,34.1 18,54C18,73.9 34.1,90 54,90C73.9,90 90,73.9 90,54C90,34.1 73.9,18 54,18Z" />
+    <!-- Lightning bolt (Fitivy energy symbol) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,28L42,58L52,58L48,80L66,48L56,48Z" />
+</vector>

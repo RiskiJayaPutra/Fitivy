@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1090158372600",
+    "project_id": "fitivy-2512",
+    "storage_bucket": "fitivy-2512.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090158372600:android:2e14045833dcf0e4c0bd0d",
+        "android_client_info": {
+          "package_name": "com.fitivy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK76F4zeUX-C1D8whpgCKEYOcSaOfN1TY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

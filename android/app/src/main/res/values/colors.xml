@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fitivy Brand Colors - Harvard Royal Blue Palette -->
+    <color name="fitivy_primary">#154FB3</color>
+    <color name="fitivy_primary_dark">#0E3A85</color>
+    <color name="fitivy_primary_light">#D6E4FF</color>
+    <color name="fitivy_on_primary">#FFFFFF</color>
+
+    <color name="fitivy_accent">#154FB3</color>
+    <color name="fitivy_accent_dark">#0E3A85</color>
+
+    <!-- UI Elements -->
+    <color name="bg_main">#F8FAFF</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="card_stroke">#E0E7FF</color>
+
+    <!-- Text Colors -->
+    <color name="text_title">#154FB3</color>
+    <color name="text_body">#2D3748</color>
+    <color name="text_muted">#718096</color>
+
+    <!-- Aliases for compatibility with old layouts -->
+    <color name="bg_primary">#F8FAFF</color>
+    <color name="text_primary">#2D3748</color>
+    <color name="text_secondary">#718096</color>
+    <color name="text_hint">#A0AEC0</color>
+    <color name="gradient_start">#154FB3</color>
+    <color name="gradient_end">#154FB3</color>
+
+    <!-- Legacy compatibility colors -->
+    <color name="fitivy_orange">#F59E0B</color>
+    <color name="fitivy_red">#EF4444</color>
+
+    <!-- Status Colors -->
+    <color name="success">#22C55E</color>
+    <color name="error">#EF4444</color>
+    <color name="warning">#F59E0B</color>
+
+    <!-- Standard Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>
