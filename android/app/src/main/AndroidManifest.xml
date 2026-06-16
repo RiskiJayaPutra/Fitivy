@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ===================================================================
+         PERMISSIONS — Fitivy Sensor & Tracking
+         =================================================================== -->
+
+    <!-- GPS tracking — wajib untuk FusedLocationProvider HIGH_ACCURACY -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Background location — agar GPS tetap aktif saat app di background -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Step counter & accelerometer — API 29+ butuh permission ini -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <!-- Foreground service — wajib untuk persistent tracking notification -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+
+    <!-- Notification — API 33+ butuh runtime permission -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Internet — untuk sync ke backend -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Wake lock — agar WorkManager sync tidak dibunuh saat CPU sleep -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Boot complete — restart tracking jika device reboot saat tracking aktif -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- ===================================================================
+         HARDWARE FEATURES — opsional, agar app tetap bisa diinstal
+         di device tanpa sensor tertentu
+         =================================================================== -->
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+    <application
+        android:name=".FitivyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Fitivy"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Fitivy"
+        tools:targetApi="34">
+
+        <!-- ===============================================================
+             FOREGROUND SERVICE — Activity Detection & Tracking
+             =============================================================== -->
+        <service
+            android:name=".service.ActivityDetectionService"
+            android:exported="false"
+            android:foregroundServiceType="location|health">
+            <!--
+                foregroundServiceType:
+                  - location: izinkan GPS di foreground service
+                  - health:   izinkan step counter & body sensors
+                Wajib declare di manifest sejak API 34.
+            -->
+        </service>
+
+        <!-- ===============================================================
+             AUTH ACTIVITIES
+             =============================================================== -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false" />
+
+        <!-- ===============================================================
+             MAIN ACTIVITY (DASHBOARD)
+             =============================================================== -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+    </application>
+
+</manifest>

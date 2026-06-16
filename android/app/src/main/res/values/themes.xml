@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Fitivy" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/fitivy_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/fitivy_primary_light</item>
+        <item name="colorSecondary">@color/fitivy_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/bg_card</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

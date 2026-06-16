@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.fitivy.app.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.fitivy.app.ui.dashboard.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/trackerFragment"
+        android:name="com.fitivy.app.ui.tracker.TrackerFragment"
+        android:label="Tracker"
+        tools:layout="@layout/fragment_tracker">
+        <action
+            android:id="@+id/action_trackerFragment_to_activeTrackingFragment"
+            app:destination="@id/activeTrackingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activeTrackingFragment"
+        android:name="com.fitivy.app.ui.tracker.ActiveTrackingFragment"
+        android:label="Active Tracking"
+        tools:layout="@layout/fragment_active_tracking" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.fitivy.app.ui.history.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.fitivy.app.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/historyDetailFragment"
+        android:name="com.fitivy.app.ui.history.HistoryDetailFragment"
+        android:label="History Detail"
+        tools:layout="@layout/fragment_history_detail">
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
