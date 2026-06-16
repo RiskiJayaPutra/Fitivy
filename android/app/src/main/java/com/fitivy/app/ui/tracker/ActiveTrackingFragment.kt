@@ -107,10 +107,12 @@ class ActiveTrackingFragment : Fragment() {
         }
         binding.mapViewTracking.overlays.add(locationOverlay)
 
-        // 2. Setup Route Overlay (Garis Merah Terfilter) - Muncul asinkron dari Service
+        // 2. Setup Route Overlay (Garis Orange Terfilter ala Strava) - Muncul asinkron dari Service
         routeOverlay = Polyline()
-        routeOverlay?.outlinePaint?.color = requireContext().getColor(R.color.fitivy_red)
-        routeOverlay?.outlinePaint?.strokeWidth = 10f
+        routeOverlay?.outlinePaint?.color = requireContext().getColor(R.color.strava_orange)
+        routeOverlay?.outlinePaint?.strokeWidth = 15f
+        routeOverlay?.outlinePaint?.strokeCap = android.graphics.Paint.Cap.ROUND
+        routeOverlay?.outlinePaint?.strokeJoin = android.graphics.Paint.Join.ROUND
         binding.mapViewTracking.overlays.add(routeOverlay)
     }
 

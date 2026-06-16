@@ -262,8 +262,8 @@ class LocationTracker @Inject constructor(
                 // Update formatted KM
                 _totalDistanceKmFormatted.value = String.format("%.2f", newTotal / 1000.0)
             } else {
-                // Jitter distance, jangan simpan sebagai lastAcceptedLocation
-                return 
+                // Jitter distance, jangan akumulasi jarak.
+                // Tapi kita TETAP menggambar titik ini di rute (Polyline Orange) agar jejak terlihat.
             }
         }
 
